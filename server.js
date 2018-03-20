@@ -1,13 +1,14 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 const hostname = '127.0.0.1';
 const port = 4500;
 
-
+app.use(express.static('public'));
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/public/index.html');
   });
   
   io.on('connection', function(socket){

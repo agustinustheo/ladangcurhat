@@ -1,0 +1,8 @@
+#messages li{
+    word-wrap: break-word;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: dodgerblue;
+}
