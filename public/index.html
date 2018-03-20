@@ -28,13 +28,23 @@
     <script>
     $(function () {
         var socket = io();
+        var clientID;
+        socket.on('connected', function(response) {
+          clientID = response.clientID;
+          console.log(clientID);
+        });
         $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
         return false;
         });
-        socket.on('chat message', function(msg) {
+        socket.on('chat message', function(data) {
+          var msg = data.message;
+          var clientName = data.clientName;
           $('#messages').append($('<li class="speech-bubble">').text(msg));
+        });
+        socket.on('nameResult', function(result) {
+          $('#messages').append($('<li>').text('Welcome ' + result.name));
         });
     });
     
