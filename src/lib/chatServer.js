@@ -13,17 +13,17 @@ exports.listen = function(server) {
     socket.emit('connected', {
       clientID: socket.id
     });
-    // then assign it a guest name
-    guestNumber = assignGuestNumber(socket, guestNumber, nickNames, namesUsed);
-    handleMessageBroadcasting(io, socket, nickNames);
     
+    // Assign it a guest name
+    guestNumber = assignGuestNumber(socket, guestNumber, nickNames, namesUsed);
+    // And broadcast its username to other users
+    socket.broadcast.emit('a user connected', {
+      clientName: nickNames[socket.id]
+    });
 
-
+    handleMessageBroadcasting(io, socket, nickNames);
     socket.on('disconnect', function(){
         console.log('user disconnected');
-    });
-    socket.on('chat message', function(msg) {
-      io.emit('chat message', msg);
     });
   });
 }

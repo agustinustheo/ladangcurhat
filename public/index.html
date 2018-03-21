@@ -37,11 +37,19 @@
           var msg = data.message;
           var clientName = data.clientName;
           console.log(data);
-           $('#messages').append('<li><span class="sender-name">' + clientName + '<span><br><span class="speech-bubble">' + msg + '</span></li>');
+           $('#messages').append('<li><span class="sender-name">' + clientName + '</span><br><span class="speech-bubble">' + msg + '</span></li>');
         });
+
+        // When you're connected welcome yourself
         socket.on('nameResult', function(result) {
           $('#messages').append($('<li>').text('Welcome ' + result.name));
         });
+
+        // When other user connected welcome them
+        socket.on('a user connected', function(data) {
+          var clientName = data.clientName;
+          $('#messages').append($('<li>').text('Welcome ' + clientName)); 
+        })
     });
     
     </script>
