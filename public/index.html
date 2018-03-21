@@ -3,24 +3,16 @@
     <head>
         <title>Socket.IO chat</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; width: 200px; }
-      /* #messages li{
-          border-radius: 25px;
-          padding: 10px;
-          background: dodgerblue;
-      } */
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <div class="container message-output">    
+      <ul id="messages"></ul>
+    </div>
     <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+      <input id="m" autocomplete="off" / placeholder="Write a message.."><button>Send</button>
     </form>
 
     <script src="/socket.io/socket.io.js"></script>
@@ -34,15 +26,18 @@
           console.log(clientID);
         });
         $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
+          var str = $('#m').val();
+          if (!(str.replace(/\s/g, '').length == 0)) {
+            socket.emit('chat message', $('#m').val());
+          }
+          $('#m').val('');
+          return false;
         });
         socket.on('chat message', function(data) {
           var msg = data.message;
           var clientName = data.clientName;
           console.log(data);
-          $('#messages').append($('<li class="speech-bubble">').text(msg));
+           $('#messages').append('<li><span class="sender-name">' + clientName + '<span><br><span class="speech-bubble">' + msg + '</span></li>');
         });
         socket.on('nameResult', function(result) {
           $('#messages').append($('<li>').text('Welcome ' + result.name));
