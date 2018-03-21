@@ -22,7 +22,7 @@
       var socket = io();
       $('form').submit(function(){
         var str = $('#m').val();
-        console.log(str.replace(/\s/g, '').length);
+        var count = 0;
         if (!(str.replace(/\s/g, '').length == 0)) {
           socket.emit('chat message', $('#m').val());
         }
@@ -30,7 +30,8 @@
         return false;
       });
       socket.on('chat message', function(msg) {
-        $('#messages').append('<li><span class="speech-bubble">' + msg + '</span></li>');
+        count++;
+        $('#messages').append('<li><span class="sender-name">Agustinus Theo</span><br><span class="speech-bubble">' + msg + '</span></li>');
       });
     });
     
