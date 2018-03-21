@@ -19,15 +19,20 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
     $(function () {
-        var socket = io();
-        $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
+      var socket = io();
+      $('form').submit(function(){
+        var str = $('#m').val();
+        var count = 0;
+        if (!(str.replace(/\s/g, '').length == 0)) {
+          socket.emit('chat message', $('#m').val());
+        }
         $('#m').val('');
         return false;
-        });
-        socket.on('chat message', function(msg) {
-          $('#messages').append('<li><span class="speech-bubble">' + msg + '</span></li>');
-        });
+      });
+      socket.on('chat message', function(msg) {
+        count++;
+        $('#messages').append('<li><span class="sender-name">Agustinus Theo</span><br><span class="speech-bubble">' + msg + '</span></li>');
+      });
     });
     
     </script>

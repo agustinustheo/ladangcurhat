@@ -35,10 +35,34 @@ form {
     bottom: 0; 
     width: 100%;
 }
+#messages { 
+    list-style-type: none; 
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
+    padding: 0; 
+}
+.speech-bubble{
+    word-wrap: break-word;
+    max-width: 300px;
+    position: relative;
+    display: inline-block;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    background: lightskyblue;
+}
+.sender-name{
+    font-size: 8pt;
+    color: grey;
+}
+
+/*-------------------------------------MESSAGE INPUT---------------------------------------------*/
 form input { 
     border: 0; 
     padding: 10px; 
-    width: calc(90%-20px); 
+    width: calc(90% - 20px); 
     margin: 5px;
     margin-left: 20px;
     margin-right: .5%;
@@ -52,8 +76,10 @@ form input {
 form input:focus{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.3);
 }
+
+/*-------------------------------------SEND BUTTON---------------------------------------------*/
 form button { 
-    width: calc(9%-20px);
+    width: calc(9% - 20px);
     margin-right: 20px; 
     line-height: 18px;
  
@@ -68,23 +94,8 @@ form button {
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: all .2s ease-in-out; 
+    outline: 0;
 }
 form button:hover{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-}
-#messages { 
-    list-style-type: none; 
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 0; 
-}
-.speech-bubble{
-    word-wrap: break-word;
-    max-width: 300px;
-    position: relative;
-    display: inline-block;
-    border-radius: 25px;
-    padding: 10px;
-    margin-top: 10px;
-    background: lightskyblue;
 }
