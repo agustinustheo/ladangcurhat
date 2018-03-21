@@ -3,12 +3,13 @@
     <head>
         <title>Socket.IO chat</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+        <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
     <style>
     </style>
   </head>
   <body>
-    <div class="container message-output">    
+    <div class="message-output">    
       <ul id="messages"></ul>
     </div>
     <form action="">
@@ -21,6 +22,8 @@
     $(function () {
         var socket = io();
         var clientID;
+        var currClient = ""; 
+        var userName = "";
         socket.on('connected', function(response) {
           clientID = response.clientID;
           console.log(clientID);
@@ -36,11 +39,30 @@
         socket.on('chat message', function(data) {
           var msg = data.message;
           var clientName = data.clientName;
-          console.log(data);
-           $('#messages').append('<li><span class="sender-name">' + clientName + '<span><br><span class="speech-bubble">' + msg + '</span></li>');
+          if(userName == clientName){
+            if(currClient != clientName){
+              $('#messages').append('<li><span class="sender-name">' + clientName + '</span><br><span class="speech-bubble">' + msg + '</span></li>');
+              currClient = clientName;
+            }
+            else{
+              $('#messages').append('<li><span class="speech-bubble">' + msg + '</span></li>');
+            } 
+          }
+          else{
+            if(currClient != clientName){
+              $('#messages').append('<li class="overflow-auto"><div class="overflow-auto float-right"><span class="sender-name float-right">' + clientName + '</span><br><span class="speech-bubble">' + msg + '</span></div></li>');
+              currClient = clientName;
+            }
+            else{
+              $('#messages').append('<li style="overflow: auto;"><div class="float-right"><span class="speech-bubble">' + msg + '</span></div></li>');
+            }
+          }
         });
         socket.on('nameResult', function(result) {
-          $('#messages').append($('<li>').text('Welcome ' + result.name));
+          if(userName == ""){
+            userName = result.name;
+          }
+          $('#messages').append($('<li class="sender-name text-center">').text('Welcome ' + result.name));
         });
     });
     
