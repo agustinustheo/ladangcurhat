@@ -9,20 +9,49 @@
     </style>
   </head>
   <body>
-    <div class="message-output">    
-      <ul id="messages"></ul>
-    </div>
-    <form action="">
-      <input id="m" autocomplete="off" / placeholder="Write a message.."><button>Send</button>
-    </form>
-    <div style="width: 100vw; height: 100vh; position: relative; z-index: -10;">
-      <div class="next-page text-center">
-        <span class="arrow right"></span>
+<div style="width: 100vw; overflow: hidden">
+  <div id="mainContainer" class="d-flex justify-content-start" style="transition: all .3s ease-in; width: 200vw;">
+    <div style="width: 100vw; height: 100vh; position: relative;">
+      <div class="message-output">    
+        <ul id="messages"></ul>
+      </div>
+      <form action="">
+        <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
+      </form>
+      <div id="nextPage" class="next-page text-center to-right">
+        <span id="arrow" class="arrow arrow-to-right"></span>
       </div>
     </div>
-
+    <div style="width: 100vw; height: 100vh; position: relative; background: dodgerblue;">
+      
+    </div>
+  </div>
+</div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var counter = 0;
+        $('#nextPage').click(function(){
+          if(counter === 0){
+            $('#mainContainer').addClass("move-left");
+            $('#nextPage').removeClass("to-right");
+            $('#nextPage').addClass("to-left");
+            $('#nextPage').removeClass("arrow-to-right");
+            $('#nextPage').addClass("arrow-to-left");
+            counter++;
+          }
+          else{
+            $('#mainContainer').addClass("move-right");
+            $('#nextPage').removeClass("to-left");
+            $('#nextPage').addClass("to-right");
+            $('#nextPage').removeClass("arrow-to-left");
+            $('#nextPage').addClass("arrow-to-right");
+            $('#mainContainer').removeClass("move-left");
+            $('#mainContainer').removeClass("move-right");
+            counter--;
+          }
+        });
+    </script>
     <script>
     $(function () {
         var socket = io();

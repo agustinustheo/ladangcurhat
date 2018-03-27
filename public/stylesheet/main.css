@@ -119,7 +119,7 @@ form button {
     border: solid .5px lightskyblue; 
     
     cursor: pointer;
-    transition: all .2s ease-in-out; 
+    transition: all .5s ease-in-out; 
 }
 form button:hover{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
@@ -131,30 +131,51 @@ form button:focus{
 .arrow {
     border: solid rgb(145, 145, 145);
     border-width: 0 10px 10px 0;
+    
     display: inline-block;
     padding: 18px;
-    margin-right: 10px;
-  }
-  .right {
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-  }
+
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
 .next-page{
     width: 100px;
     height: 100px;
-    position: absolute;
+    
+    position: fixed;
     top: calc(50% - 100px);
-    right: 10px;
-    border-radius: 50%;
-    background: rgb(219, 219, 219);
     line-height: 140px;
     vertical-align: middle;
-    cursor: pointer;
-    opacity: .4;
-    box-shadow: 0 0 2px rgba(0,0,0,0.15);
-    transition: box-shadow 0.2s ease-in-out;
     z-index: 10;
+
+    background: rgb(219, 219, 219);
+    opacity: .4;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 .next-page:hover{
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.808);
+}
+.move-left{
+    transform: translate(-100vw, 0);
+}
+.move-right{
+    transform: translate(100vw, 0);
+}
+.to-left{
+    right: calc(100vw - 110px);
+}
+.to-right{
+    right: 10px;
+}
+.arrow-to-right{
+    margin-right: 10px;
+}
+.arrow-to-left{
+    transform: rotate(180deg);
+    margin-right: 0px;
 }
