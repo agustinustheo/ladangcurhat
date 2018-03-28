@@ -22,8 +22,27 @@
 .overflow-auto{
     overflow: auto;
 }
+.canvas{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
 
-/*-------------------------------------MESSAGE BODY---------------------------------------------*/
+/*-------------------------------------MESSAGE BODY RESPONSIVE 1---------------------------------------------*/
+@media screen and (min-width: 410px){
+    .speech-bubble{
+        max-width: 300px;
+        font-size: 13px;
+    }
+}
+/*-------------------------------------MESSAGE BODY RESPONSIVE 2---------------------------------------------*/
+@media screen and (max-width: 410px){
+    .speech-bubble{
+        max-width: 230px;
+        font-size: 11px;
+    }
+}
+/*-------------------------------------MESSAGE BODY DEFAULT---------------------------------------------*/
 .message-output{
     position: fixed;
     width: calc(100% - 40px);
@@ -45,10 +64,8 @@ form {
 }
 .speech-bubble{
     word-wrap: break-word;
-    max-width: 300px;
     position: relative;
     display: inline-block;
-    font-size: 13px;
     border-radius: 25px;
     padding: 10px;
     margin-top: 2px;
@@ -79,12 +96,21 @@ form {
     }
 }
 /*-------------------------------------CHAT BOX RESPONSIVE 3---------------------------------------------*/
-@media screen and (max-width: 570px){
+@media screen and (min-width: 410px) and (max-width: 570px){
     form button{
         width: calc(19% - 20px);
     }
     form input{
         width: calc(80% - 20px);
+    }
+}
+/*-------------------------------------CHAT BOX RESPONSIVE 4---------------------------------------------*/
+@media screen and (max-width: 410px){
+    form button{
+        width: calc(24% - 20px);
+    }
+    form input{
+        width: calc(75% - 20px);
     }
 }
 
@@ -128,27 +154,67 @@ form button:focus{
     outline: 0;
 }
 
+/*-------------------------------------NEXT BUTTON RESPONSIVE 1---------------------------------------------*/
+@media screen and (min-width: 956px){
+    .arrow {
+        border: solid rgb(145, 145, 145);
+        border-width: 0 10px 10px 0;
+        padding: 18px;
+    }
+    .next-page{
+        width: 100px;
+        height: 100px;
+        
+        position: fixed;
+        line-height: 140px;
+        top: calc(50% - 100px);
+    }
+}
+
+/*-------------------------------------NEXT BUTTON RESPONSIVE 2---------------------------------------------*/
+@media screen and (min-width: 410px) and (max-width: 956px){
+    .arrow {
+        border: solid rgb(145, 145, 145);
+        border-width: 0 8px 8px 0;
+        padding: 14px;
+    }
+    .next-page{
+        width: 80px;
+        height: 80px;
+        
+        position: fixed;
+        line-height: 112px;
+        top: calc(50% - 80px);
+    }
+}
+/*-------------------------------------NEXT BUTTON RESPONSIVE 3---------------------------------------------*/
+@media screen and (max-width: 410px){
+    .arrow {
+        border: solid rgb(145, 145, 145);
+        border-width: 0 5px 5px 0;
+        padding: 10px;
+    }
+    .next-page{
+        width: 50px;
+        height: 50px;
+
+        position: fixed;
+        line-height: 70px;
+        top: calc(50% - 50px);
+    }
+}
+/*-------------------------------------NEXT BUTTON DEFAULT---------------------------------------------*/
 .arrow {
-    border: solid rgb(145, 145, 145);
-    border-width: 0 10px 10px 0;
-    
     display: inline-block;
-    padding: 18px;
 
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .next-page{
-    width: 100px;
-    height: 100px;
-    
-    position: fixed;
-    top: calc(50% - 100px);
-    line-height: 140px;
-    vertical-align: middle;
-    z-index: 10;
-
     background: rgb(219, 219, 219);
     opacity: .4;
     border-radius: 50%;
@@ -156,6 +222,7 @@ form button:focus{
 
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+    z-index: 10;
 }
 .next-page:hover{
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.808);
@@ -178,4 +245,9 @@ form button:focus{
 .arrow-to-left{
     transform: rotate(180deg);
     margin-right: 0px;
+}
+
+.dashboard{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }

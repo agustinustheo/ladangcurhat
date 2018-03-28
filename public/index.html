@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Socket.IO chat</title>
+        <title>Daru Chat</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
     <style>
@@ -11,7 +12,7 @@
   <body>
 <div style="width: 100vw; overflow: hidden">
   <div id="mainContainer" class="d-flex justify-content-start" style="transition: all .3s ease-in; width: 200vw;">
-    <div style="width: 100vw; height: 100vh; position: relative;">
+    <div class="canvas">
       <div class="message-output">    
         <ul id="messages"></ul>
       </div>
@@ -22,8 +23,17 @@
         <span id="arrow" class="arrow arrow-to-right"></span>
       </div>
     </div>
-    <div style="width: 100vw; height: 100vh; position: relative; background: dodgerblue;">
-      
+    <div class="canvas" style="background: #282828;">
+      <div class="dashboard">
+          <div class="dashboard-profile">
+            <div>
+
+            </div>
+            <div>
+              
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
