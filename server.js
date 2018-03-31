@@ -6,8 +6,8 @@ const chatServer = require('./src/lib/chatServer');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const hostname = '127.0.0.1';
-const port = 4500;
+const hostname = process.env.PORT ? '127.0.0.1' : '0.0.0.0'; //for heroku  
+const port = process.env.PORT || 4500;
 
 app.use('/stylesheet', express.static(__dirname + '/public/stylesheet/'));
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
@@ -22,8 +22,8 @@ app.post('/signup', jsonParser, function(req, res) {
   res.send({ message: 'got your request', request: req.body });
 });
 
-server.listen(port, function(){
-  console.log('Server on port 4500');
+server.listen(port, hostname, function(){
+  console.log('Server on port ' + port);
 });
 
 chatServer.listen(server);
