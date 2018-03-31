@@ -22,7 +22,7 @@ app.post('/signup', jsonParser, function(req, res) {
   res.send({ message: 'got your request', request: req.body });
 });
 
-server.listen(port, hostname, function(){
+server.listen(port, function(){
   console.log('Server on port ' + port);
 });
 
