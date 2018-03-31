@@ -6,7 +6,6 @@ const chatServer = require('./src/lib/chatServer');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const hostname = process.env.PORT ? '127.0.0.1' : '0.0.0.0'; //for heroku  
 const port = process.env.PORT || 4500;
 
 app.use('/stylesheet', express.static(__dirname + '/public/stylesheet/'));
