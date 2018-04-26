@@ -169,6 +169,9 @@ form button:focus{
         line-height: 140px;
         top: calc(50% - 100px);
     }
+    .to-left{
+        right: calc(100vw - 110px);
+    }
 }
 
 /*-------------------------------------NEXT BUTTON RESPONSIVE 2---------------------------------------------*/
@@ -186,6 +189,9 @@ form button:focus{
         line-height: 112px;
         top: calc(50% - 80px);
     }
+    .to-left{
+        right: calc(100vw - 90px);
+    }
 }
 /*-------------------------------------NEXT BUTTON RESPONSIVE 3---------------------------------------------*/
 @media screen and (max-width: 410px){
@@ -201,6 +207,9 @@ form button:focus{
         position: fixed;
         line-height: 70px;
         top: calc(50% - 50px);
+    }
+    .to-left{
+        right: calc(100vw - 60px);
     }
 }
 /*-------------------------------------NEXT BUTTON DEFAULT---------------------------------------------*/
@@ -232,9 +241,6 @@ form button:focus{
 }
 .move-right{
     transform: translate(100vw, 0);
-}
-.to-left{
-    right: calc(100vw - 110px);
 }
 .to-right{
     right: 10px;
