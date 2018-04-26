@@ -25,7 +25,6 @@
 .canvas{
     width: 100vw;
     height: 100vh;
-    position: relative;
 }
 
 /*-------------------------------------MESSAGE BODY RESPONSIVE 1---------------------------------------------*/
@@ -239,8 +238,8 @@ form button:focus{
 .move-left{
     transform: translate(-100vw, 0);
 }
-.move-right{
-    transform: translate(100vw, 0);
+.to-left{
+    right: calc(100vw - 110px);
 }
 .to-right{
     right: 10px;
@@ -256,4 +255,11 @@ form button:focus{
 .dashboard{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+}
+.background-grey{
+    background: #282828;
+}
+#mainContainer{
+    transition: all .3s ease-out; 
+    width: 200vw;
 }

@@ -10,21 +10,23 @@
     </style>
   </head>
   <body>
-<div style="width: 100vw; overflow: hidden">
-  <div id="mainContainer" class="d-flex justify-content-start" style="transition: all .3s ease-in; width: 200vw;">
-    <div class="canvas">
-      <div class="message-output">    
-        <ul id="messages"></ul>
-      </div>
-      <form action="">
-        <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
-      </form>
-      <div id="nextPage" class="next-page text-center to-right">
-        <span id="arrow" class="arrow arrow-to-right"></span>
+<div style="width: 100vw; overflow: hidden; position: relative">
+  <div id="nextPage" class="next-page text-center to-right">
+    <span id="arrow" class="arrow arrow-to-right"></span>
+  </div>
+  <div id="mainContainer" class="d-flex justify-content-start">
+    <div class="canvas" id="chatBox">
+      <div id="messagesOutput">
+        <div class="message-output" style="max-width: 100vw;">    
+          <ul id="messages"></ul>
+        </div>
+        <form action="" style="max-width: 100vw;">
+          <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
+        </form>
       </div>
     </div>
-    <div class="canvas" style="background: #282828;">
-      <div class="">
+    <div class="canvas" id="profile">
+      <div class="dashboard" id="dashboard">
           <div class="dashboard-profile">
             <div style="margin: auto; width: 500px; background: green; overflow: auto; margin-top: 50px;">
               <div class="float-left" style="overflow: hidden; border-radius: 50%; width: 200px; height: 200px; background:deepskyblue;">
@@ -53,21 +55,21 @@
       var counter = 0;
         $('#nextPage').click(function(){
           if(counter === 0){
+            $('#messagesOutput').hide();
             $('#mainContainer').addClass("move-left");
-            $('#nextPage').removeClass("to-right");
-            $('#nextPage').addClass("to-left");
-            $('#nextPage').removeClass("arrow-to-right");
-            $('#nextPage').addClass("arrow-to-left");
+            $('#nextPage').removeClass("arrow-to-right to-right");
+            $('#nextPage').addClass("arrow-to-left to-left");
+            $('body').addClass("background-grey");
+            $('#dashboard').show();
             counter++;
           }
           else{
-            $('#mainContainer').addClass("move-right");
-            $('#nextPage').removeClass("to-left");
-            $('#nextPage').addClass("to-right");
-            $('#nextPage').removeClass("arrow-to-left");
-            $('#nextPage').addClass("arrow-to-right");
+            $('#dashboard').hide();
+            $('body').removeClass("background-grey");
+            $('#nextPage').addClass("arrow-to-right to-right");
+            $('#nextPage').removeClass("arrow-to-left to-left");
             $('#mainContainer').removeClass("move-left");
-            $('#mainContainer').removeClass("move-right");
+            $('#messagesOutput').show();
             counter--;
           }
         });
