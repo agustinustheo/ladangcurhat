@@ -10,19 +10,19 @@
     </style>
   </head>
   <body>
-<div style="width: 100vw; overflow: hidden;">
-  <div id="mainContainer" class="d-flex justify-content-start" style="transition: all .3s ease-out; width: 200vw;">
+<div style="width: 100vw; overflow: hidden; position: relative">
+  <div id="nextPage" class="next-page text-center to-right">
+    <span id="arrow" class="arrow arrow-to-right"></span>
+  </div>
+  <div id="mainContainer" class="d-flex justify-content-start">
     <div class="canvas" id="chatBox">
       <div id="messagesOutput">
-        <div class="message-output">    
+        <div class="message-output" style="max-width: 100vw;">    
           <ul id="messages"></ul>
         </div>
-        <form action="">
+        <form action="" style="max-width: 100vw;">
           <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
         </form>
-      </div>
-      <div id="nextPage" class="next-page text-center to-right">
-        <span id="arrow" class="arrow arrow-to-right"></span>
       </div>
     </div>
     <div class="canvas" id="profile">
@@ -47,22 +47,18 @@
           if(counter === 0){
             $('#messagesOutput').hide();
             $('#mainContainer').addClass("move-left");
-            $('#nextPage').removeClass("to-right");
-            $('#nextPage').addClass("to-left");
-            $('#nextPage').removeClass("arrow-to-right");
-            $('#nextPage').addClass("arrow-to-left");
-            $('#mainContainer').addClass("background-grey");
+            $('#nextPage').removeClass("arrow-to-right to-right");
+            $('#nextPage').addClass("arrow-to-left to-left");
+            $('body').addClass("background-grey");
             $('#dashboard').show();
             counter++;
           }
           else{
             $('#dashboard').hide();
-            // $('#mainContainer').removeClass("move-left");
-            $('#mainContainer').removeClass("background-grey");
-            $('#nextPage').removeClass("arrow-to-left");
-            $('#nextPage').addClass("arrow-to-right");
-            $('#nextPage').addClass("to-right");
-            $('#nextPage').removeClass("to-left");
+            $('body').removeClass("background-grey");
+            $('#nextPage').addClass("arrow-to-right to-right");
+            $('#nextPage').removeClass("arrow-to-left to-left");
+            $('#mainContainer').removeClass("move-left");
             $('#messagesOutput').show();
             counter--;
           }
