@@ -10,21 +10,23 @@
     </style>
   </head>
   <body>
-<div style="width: 100vw; overflow: hidden">
-  <div id="mainContainer" class="d-flex justify-content-start" style="transition: all .3s ease-in; width: 200vw;">
-    <div class="canvas">
-      <div class="message-output">    
-        <ul id="messages"></ul>
+<div style="width: 100vw; overflow: hidden;">
+  <div id="mainContainer" class="d-flex justify-content-start" style="transition: all .3s ease-out; width: 200vw;">
+    <div class="canvas" id="chatBox">
+      <div id="messagesOutput">
+        <div class="message-output">    
+          <ul id="messages"></ul>
+        </div>
+        <form action="">
+          <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
+        </form>
       </div>
-      <form action="">
-        <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
-      </form>
       <div id="nextPage" class="next-page text-center to-right">
         <span id="arrow" class="arrow arrow-to-right"></span>
       </div>
     </div>
-    <div class="canvas" style="background: #282828;">
-      <div class="dashboard">
+    <div class="canvas" id="profile">
+      <div class="dashboard" id="dashboard">
           <div class="dashboard-profile">
             <div>
 
@@ -43,21 +45,25 @@
       var counter = 0;
         $('#nextPage').click(function(){
           if(counter === 0){
+            $('#messagesOutput').hide();
             $('#mainContainer').addClass("move-left");
             $('#nextPage').removeClass("to-right");
             $('#nextPage').addClass("to-left");
             $('#nextPage').removeClass("arrow-to-right");
             $('#nextPage').addClass("arrow-to-left");
+            $('#mainContainer').addClass("background-grey");
+            $('#dashboard').show();
             counter++;
           }
           else{
-            $('#mainContainer').addClass("move-right");
-            $('#nextPage').removeClass("to-left");
-            $('#nextPage').addClass("to-right");
+            $('#dashboard').hide();
+            // $('#mainContainer').removeClass("move-left");
+            $('#mainContainer').removeClass("background-grey");
             $('#nextPage').removeClass("arrow-to-left");
             $('#nextPage').addClass("arrow-to-right");
-            $('#mainContainer').removeClass("move-left");
-            $('#mainContainer').removeClass("move-right");
+            $('#nextPage').addClass("to-right");
+            $('#nextPage').removeClass("to-left");
+            $('#messagesOutput').show();
             counter--;
           }
         });
