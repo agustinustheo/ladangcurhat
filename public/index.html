@@ -9,46 +9,38 @@
     <style>
     </style>
   </head>
-  <body>
-<div style="width: 100vw; overflow: hidden; position: relative">
-  <div id="nextPage" class="next-page text-center to-right">
-    <span id="arrow" class="arrow arrow-to-right"></span>
-  </div>
-  <div id="mainContainer" class="d-flex justify-content-start">
-    <div class="canvas" id="chatBox">
-      <div id="messagesOutput">
-        <div class="message-output" style="max-width: 100vw;">    
-          <ul id="messages"></ul>
-        </div>
-        <form action="" style="max-width: 100vw;">
-          <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
-        </form>
+  <body class="background-whiteblue">
+    <div style="width: 100vw; overflow: hidden; position: relative">
+      <div id="nextPage" class="next-page text-center to-right">
+        <span id="arrow" class="arrow arrow-to-right"></span>
       </div>
-    </div>
-    <div class="canvas" id="profile">
-      <div class="dashboard" id="dashboard">
-          <div class="dashboard-profile">
-            <div style="margin: auto; width: 500px; background: green; overflow: auto; margin-top: 50px;">
-              <div class="float-left" style="overflow: hidden; border-radius: 50%; width: 200px; height: 200px; background:deepskyblue;">
-                <img src="1512297426122.jpg">
-              </div>
-              <h1 class="float-right" style="line-height: 200px; margin-left: 10px;">$Username</h1>
+      <div id="mainContainer" class="d-flex justify-content-start">
+        <div class="canvas" id="chatBox">
+          <div id="messagesOutput">
+            <div class="message-output" style="max-width: 100vw;">    
+              <ul id="messages"></ul>
             </div>
-            <div style="background: green; margin-left: 20px;">
-              <ul>
-                <li>Chat</li>
-                <li>Chat</li>
-                <li>Chat</li>
-                <li>Chat</li>
-                <li>Chat</li>
-                <li>Chat</li>
-              </ul>
-            </div>
+            <form action="" style="max-width: 100vw;">
+              <input id="m" autocomplete="off" placeholder="Write a message.."><button>Send</button>
+            </form>
           </div>
+        </div>
+        <div class="canvas" id="dashboard">
+          <div class="dashboard">
+              <div class="dashboard-profile">
+                <div id="profile">
+                  <div id="profilePicture">
+                    <img src="1512297426122.jpg">
+                  </div>
+                  <h1 id="username">$Usernameaaaaaaaaaaaaaa</h1>
+                </div>
+                <div style="background: green; margin-left: 20px;">
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
@@ -59,19 +51,39 @@
             $('#mainContainer').addClass("move-left");
             $('#nextPage').removeClass("arrow-to-right to-right");
             $('#nextPage').addClass("arrow-to-left to-left");
-            $('body').addClass("background-grey");
             $('#dashboard').show();
             counter++;
           }
           else{
             $('#dashboard').hide();
-            $('body').removeClass("background-grey");
+            $('#mainContainer').removeClass("move-left");
             $('#nextPage').addClass("arrow-to-right to-right");
             $('#nextPage').removeClass("arrow-to-left to-left");
-            $('#mainContainer').removeClass("move-left");
             $('#messagesOutput').show();
             counter--;
           }
+        });
+        $(document).ready(function(){
+          function setProfileContainerWidth(x) {
+            if (x.matches) 
+            { // If media query matches
+              $('#profilePicture').addClass("float-left");
+              $('#username').addClass("float-right");
+              var usernameWidth = document.getElementById('username').offsetWidth;
+              var profilePictureWidth = document.getElementById('profilePicture').offsetWidth;
+              var maxWidth = usernameWidth + profilePictureWidth + 47;
+              document.getElementById("profile").style.width = maxWidth + "px";
+            }
+            else
+            {
+              $('#profilePicture').removeClass("float-left");
+              $('#username').removeClass("float-right");
+              $('#username').addClass("padding0");
+            }
+          }
+          var x = window.matchMedia("(min-width: 721px)")
+          setProfileContainerWidth(x) // Call listener function at run time
+          x.addListener(setProfileContainerWidth) // Attach listener function on state changes
         });
     </script>
     <script>

@@ -256,10 +256,30 @@ form button:focus{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
 }
-.background-grey{
-    background: #282828;
+.background-whiteblue{
+    background:#f9feff;
 }
 #mainContainer{
     transition: all .3s ease-out; 
     width: 200vw;
+}
+#profile{
+    margin: auto; 
+    overflow: auto; 
+    margin-top: 50px;
+}
+.dashboard-profile{
+    width: 100vw;
+}
+#profilePicture{
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%;
+
+    background:deepskyblue;
+    overflow: hidden;  
+}
+#username{
+    line-height: 200px; 
+    margin-left: 35px;
 }
