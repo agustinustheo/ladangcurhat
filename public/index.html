@@ -47,23 +47,24 @@
       var counter = 0;
         $('#nextPage').click(function(){
           if(counter === 0){
-            $('#messagesOutput').hide();
             $('#mainContainer').addClass("move-left");
             $('#nextPage').removeClass("arrow-to-right to-right");
             $('#nextPage').addClass("arrow-to-left to-left");
             $('#dashboard').show();
+            setTimeout("$('#messagesOutput').hide();", 200);
             counter++;
           }
           else{
-            $('#dashboard').hide();
             $('#mainContainer').removeClass("move-left");
             $('#nextPage').addClass("arrow-to-right to-right");
             $('#nextPage').removeClass("arrow-to-left to-left");
             $('#messagesOutput').show();
+            setTimeout("$('#dashboard').hide();", 200);
             counter--;
           }
         });
         $(document).ready(function(){
+          // $('#dashboard').hide(); //hide dashboard on ready
           function setProfileContainerWidth(x) {
             if (x.matches) 
             { // If media query matches
