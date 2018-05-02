@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
-    <style>
-    </style>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   </head>
   <body class="background-whiteblue">
     <div style="width: 100vw; overflow: hidden; position: relative">
@@ -26,15 +25,20 @@
           </div>
         </div>
         <div class="canvas" id="dashboard">
+          <div class="ladangcurhat-navbar hide-navbar">
+              <span style="position: absolute; right: 5vw;">
+                  <span class="link">Home</span>
+                  <span class="link">About</span>
+                  <span class="link">Settings</span>
+              </span>
+          </div>
           <div class="dashboard">
               <div class="dashboard-profile">
                 <div id="profile">
                   <div id="profilePicture">
                     <img src="1512297426122.jpg">
                   </div>
-                  <h1 id="username">$Usernameaaaaaaaaaaaaaa</h1>
-                </div>
-                <div style="background: green; margin-left: 20px;">
+                  <h1 id="username">$Username</h1>
                 </div>
               </div>
           </div>
@@ -51,6 +55,8 @@
             $('#nextPage').removeClass("arrow-to-right to-right");
             $('#nextPage').addClass("arrow-to-left to-left");
             $('#dashboard').show();
+            $('.ladangcurhat-navbar').addClass("show-navbar");
+            $('.ladangcurhat-navbar').removeClass("hide-navbar");
             setTimeout("$('#messagesOutput').hide();", 200);
             counter++;
           }

@@ -257,7 +257,7 @@ form button:focus{
     grid-template-columns: 25% 25% 25% 25%;
 }
 .background-whiteblue{
-    background:#f9feff;
+    background:#fff;
 }
 #mainContainer{
     transition: all .3s ease-out; 
@@ -282,4 +282,31 @@ form button:focus{
 #username{
     line-height: 200px; 
     margin-left: 35px;
+}
+.link{
+    margin: 0px 20px 0 20px;
+    line-height: 60px;
+
+    display: inline-block; 
+
+    font-size: 16pt;  
+    font-family: 'Open Sans Condensed', sans-serif;
+
+    cursor: pointer; 
+}
+.ladangcurhat-navbar{
+    width: 100vw; 
+    height: 60px; 
+    
+    position: relative; 
+    color: #515151;  
+    box-shadow: 0 2px 20px -2px #bababa;
+    
+    transition: all 1s ease;
+}
+.show-navbar{
+    transform: translate3d(0, 0, 0);
+}
+.hide-navbar{
+    transform: translate3d(0, -70px, 0);
 }

@@ -11,6 +11,9 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/c
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
+app.get('/header', function(req, res){
+  res.sendFile(__dirname + '/public/header.html');
+});
 
 server.listen(port, function(){
   console.log('Server on port 4500');
