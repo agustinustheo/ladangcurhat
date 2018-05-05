@@ -6,6 +6,10 @@
     font-size: 13px;
     font-family: 'Varela Round', sans-serif; 
     letter-spacing: 0.5px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
 }
 
 ::-webkit-scrollbar{
@@ -251,11 +255,6 @@ form button:focus{
     transform: rotate(180deg);
     margin-right: 0px;
 }
-
-.dashboard{
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-}
 .background-whiteblue{
     background:#fff;
 }
@@ -264,12 +263,16 @@ form button:focus{
     width: 200vw;
 }
 #profile{
+    display: grid;
+    grid-template-columns: 210px 615px;
+    width: 825px;
+
     margin: auto; 
     overflow: auto; 
-    margin-top: 50px;
 }
 .dashboard-profile{
     width: 100vw;
+    padding-top: 40px;
 }
 #profilePicture{
     width: 200px; 
@@ -280,8 +283,15 @@ form button:focus{
     overflow: hidden;  
 }
 #username{
-    line-height: 200px; 
-    margin-left: 35px;
+    font-size: 41pt;;
+    color: #414141;
+    margin: auto;
+    transition: all 1s ease;
+}
+#username:hover{
+    font-size: 43pt;
+    color: #282828;
+    cursor: pointer;
 }
 .link{
     margin: 0px 20px 0 20px;
@@ -290,7 +300,7 @@ form button:focus{
     display: inline-block; 
 
     font-size: 16pt;  
-    font-family: 'Open Sans Condensed', sans-serif;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
 
     cursor: pointer; 
 }
@@ -302,11 +312,15 @@ form button:focus{
     color: #515151;  
     box-shadow: 0 2px 20px -2px #bababa;
     
-    transition: all 1s ease;
+    transform: translate3d(0, -70px, 0);
+    transition: all .5s ease;
 }
 .show-navbar{
     transform: translate3d(0, 0, 0);
 }
 .hide-navbar{
     transform: translate3d(0, -70px, 0);
+}
+.dashboard-profile{
+    margin-top: 40px;
 }

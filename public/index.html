@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="canvas" id="dashboard">
-          <div class="ladangcurhat-navbar hide-navbar">
+          <div class="ladangcurhat-navbar">
               <span style="position: absolute; right: 5vw;">
                   <span class="link">Home</span>
                   <span class="link">About</span>
@@ -38,7 +38,7 @@
                   <div id="profilePicture">
                     <img src="1512297426122.jpg">
                   </div>
-                  <h1 id="username">$Username</h1>
+                  <h1 id="username">Agustinus Theodorus</h1>
                 </div>
               </div>
           </div>
@@ -54,9 +54,8 @@
             $('#mainContainer').addClass("move-left");
             $('#nextPage').removeClass("arrow-to-right to-right");
             $('#nextPage').addClass("arrow-to-left to-left");
-            $('#dashboard').show();
-            $('.ladangcurhat-navbar').addClass("show-navbar");
-            $('.ladangcurhat-navbar').removeClass("hide-navbar");
+            $('.dashboard').show();
+            setTimeout("$('.ladangcurhat-navbar').toggleClass('show-navbar');", 250);
             setTimeout("$('#messagesOutput').hide();", 200);
             counter++;
           }
@@ -65,32 +64,10 @@
             $('#nextPage').addClass("arrow-to-right to-right");
             $('#nextPage').removeClass("arrow-to-left to-left");
             $('#messagesOutput').show();
-            setTimeout("$('#dashboard').hide();", 200);
+            $('.ladangcurhat-navbar').toggleClass('show-navbar');
+            setTimeout("$('.dashboard').hide();", 200);
             counter--;
           }
-        });
-        $(document).ready(function(){
-          // $('#dashboard').hide(); //hide dashboard on ready
-          function setProfileContainerWidth(x) {
-            if (x.matches) 
-            { // If media query matches
-              $('#profilePicture').addClass("float-left");
-              $('#username').addClass("float-right");
-              var usernameWidth = document.getElementById('username').offsetWidth;
-              var profilePictureWidth = document.getElementById('profilePicture').offsetWidth;
-              var maxWidth = usernameWidth + profilePictureWidth + 47;
-              document.getElementById("profile").style.width = maxWidth + "px";
-            }
-            else
-            {
-              $('#profilePicture').removeClass("float-left");
-              $('#username').removeClass("float-right");
-              $('#username').addClass("padding0");
-            }
-          }
-          var x = window.matchMedia("(min-width: 721px)")
-          setProfileContainerWidth(x) // Call listener function at run time
-          x.addListener(setProfileContainerWidth) // Attach listener function on state changes
         });
     </script>
     <script>
