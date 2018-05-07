@@ -324,3 +324,10 @@ form button:focus{
 .dashboard-profile{
     margin-top: 40px;
 }
+.dashboard-content{
+    width: 100%;
+    margin-top: 20px;
+}
+#table_id{
+    margin: auto;
+}

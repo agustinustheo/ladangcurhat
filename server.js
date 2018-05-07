@@ -7,12 +7,10 @@ const hostname = '127.0.0.1';
 const port = 4500;
 
 app.use('/stylesheet', express.static(__dirname + '/public/stylesheet/'));
+app.use('/script', express.static(__dirname + '/public/script/'));
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
-});
-app.get('/header', function(req, res){
-  res.sendFile(__dirname + '/public/header.html');
 });
 
 server.listen(port, function(){

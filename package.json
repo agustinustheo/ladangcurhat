@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "datatables.net": "1.10.16",
+    "datatables.net-dt": "1.10.16",
     "express": "^4.15.2",
     "jquery": "^1.9.1",
     "nodemon": "^1.17.2",

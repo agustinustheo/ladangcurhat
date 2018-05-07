@@ -3,10 +3,12 @@
     <head>
         <title>Daru Chat</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+        <link rel="stylesheet" type="text/css" href="a/hmm.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
   </head>
   <body class="background-whiteblue">
     <div style="width: 100vw; overflow: hidden; position: relative">
@@ -36,19 +38,41 @@
               <div class="dashboard-profile">
                 <div id="profile">
                   <div id="profilePicture">
-                    <img src="1512297426122.jpg">
+                    <!-- <img src="http://localhost:4500/img/1512297426122.jpg"> -->
                   </div>
                   <h1 id="username">Agustinus Theodorus</h1>
                 </div>
+              </div>
+              <div class="dashboard-contacts">
+                <table id="table_id" class="display">
+                  <thead>
+                      <tr>
+                          <th>Column 1</th>
+                          <th>Column 2</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Row 1 Data 1</td>
+                          <td>Row 1 Data 2</td>
+                      </tr>
+                      <tr>
+                          <td>Row 2 Data 1</td>
+                          <td>Row 2 Data 2</td>
+                      </tr>
+                  </tbody>
+                </table>
               </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="/script/dataTables.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var counter = 0;
+      $('.dashboard').hide();
         $('#nextPage').click(function(){
           if(counter === 0){
             $('#mainContainer').addClass("move-left");
