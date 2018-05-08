@@ -18,5 +18,8 @@
     "nodemon": "^1.17.2",
     "popper.js": "^1.14.1",
     "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "1.17.4"
   }
 }

@@ -2,13 +2,12 @@
 <html>
     <head>
         <title>Daru Chat</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
-        <link rel="stylesheet" type="text/css" href="a/hmm.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+        <link rel="stylesheet" type="text/css" href="datatables_css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
   </head>
   <body class="background-whiteblue">
     <div style="width: 100vw; overflow: hidden; position: relative">
@@ -67,7 +66,8 @@
         </div>
       </div>
     </div>
-    <script src="/script/dataTables.js"></script>
+    <script src="script/dataTables.js"></script>
+    <script src="datatables/jquery.dataTables.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
@@ -93,8 +93,6 @@
             counter--;
           }
         });
-    </script>
-    <script>
     $(function () {
         var socket = io();
         var clientID;

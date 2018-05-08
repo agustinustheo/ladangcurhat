@@ -9,6 +9,8 @@ const port = 4500;
 app.use('/stylesheet', express.static(__dirname + '/public/stylesheet/'));
 app.use('/script', express.static(__dirname + '/public/script/'));
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
+app.use('/datatables', express.static(__dirname + '/node_modules/datatables.net/js/'));
+app.use('/datatables_css', express.static(__dirname + '/node_modules/datatables.net-dt/css/'));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
