@@ -1,10 +1,10 @@
 /*-------------------------------------DEFAULT SETTINGS---------------------------------------------*/
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-size: 13px;
-    font-family: 'Varela Round', sans-serif; 
+    font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.5px;
     user-select: none;
     -moz-user-select: none;
@@ -52,18 +52,18 @@
     height: calc(100% - 50px);
     overflow-y: auto;
 }
-form {  
-    padding: 3px; 
-    position: fixed; 
-    bottom: 0; 
+form {
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
-#messages { 
-    list-style-type: none; 
+#messages {
+    list-style-type: none;
     margin-top: 10px;
     margin-left: 30px;
     margin-right: 20px;
-    padding: 0; 
+    padding: 0;
 }
 .speech-bubble{
     word-wrap: break-word;
@@ -119,17 +119,17 @@ form {
 
 /*-------------------------------------CHAT BOX DEFAULT---------------------------------------------*/
 /*----------MESSAGE INPUT DEFAULT-------------*/
-form input { 
-    border: 0; 
-    padding: 10px;  
+form input {
+    border: 0;
+    padding: 10px;
     margin: 5px;
     margin-left: 20px;
     margin-right: .5%;
     border-radius: 15px;
     font-size: 13px;
-    font-family: 'Varela Round', sans-serif; 
+    font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.5px;
-    border: solid .5px lightskyblue; 
+    border: solid .5px lightskyblue;
     outline: 0;
 }
 form input:focus{
@@ -137,18 +137,18 @@ form input:focus{
 }
 
 /*----------SEND BUTTON DEFAULT-------------*/
-form button { 
-    margin-right: 20px; 
+form button {
+    margin-right: 20px;
     line-height: 18px;
- 
+
     background: white;
     border: none;
-    border-radius: 10px;  
+    border-radius: 10px;
     padding: 10px;
-    border: solid .5px lightskyblue; 
-    
+    border: solid .5px lightskyblue;
+
     cursor: pointer;
-    transition: all .5s ease-in-out; 
+    transition: all .5s ease-in-out;
 }
 form button:hover{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
@@ -167,7 +167,7 @@ form button:focus{
     .next-page{
         width: 100px;
         height: 100px;
-        
+
         position: fixed;
         line-height: 140px;
         top: calc(50% - 100px);
@@ -187,7 +187,7 @@ form button:focus{
     .next-page{
         width: 80px;
         height: 80px;
-        
+
         position: fixed;
         line-height: 112px;
         top: calc(50% - 80px);
@@ -259,7 +259,7 @@ form button:focus{
     background:#fff;
 }
 #mainContainer{
-    transition: all .3s ease-out; 
+    transition: all .3s ease-out;
     width: 200vw;
 }
 #profile{
@@ -267,20 +267,20 @@ form button:focus{
     grid-template-columns: 210px 615px;
     width: 825px;
 
-    margin: auto; 
-    overflow: auto; 
+    margin: auto;
+    overflow: auto;
 }
 .dashboard-profile{
     width: 100vw;
     padding-top: 40px;
 }
 #profilePicture{
-    width: 200px; 
-    height: 200px; 
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 
     background:deepskyblue;
-    overflow: hidden;  
+    overflow: hidden;
 }
 #username{
     font-size: 41pt;;
@@ -297,21 +297,21 @@ form button:focus{
     margin: 0px 20px 0 20px;
     line-height: 60px;
 
-    display: inline-block; 
+    display: inline-block;
 
-    font-size: 16pt;  
+    font-size: 16pt;
     /* font-family: 'Open Sans Condensed', sans-serif; */
 
-    cursor: pointer; 
+    cursor: pointer;
 }
 .ladangcurhat-navbar{
-    width: 100vw; 
-    height: 60px; 
-    
-    position: relative; 
-    color: #515151;  
+    width: 100vw;
+    height: 60px;
+
+    position: relative;
+    color: #515151;
     box-shadow: 0 2px 20px -2px #bababa;
-    
+
     transform: translate3d(0, -70px, 0);
     transition: all .5s ease;
 }
@@ -330,4 +330,40 @@ form button:focus{
 }
 #table_id{
     margin: auto;
+}
+#contacts_wrapper{
+    width: 100%;
+}
+.contact-info > #contacts_info, .contact-page > #contacts_paginate{
+    float: none;
+    text-align: center;
+}
+#contacts_filter{
+    float: none;
+    margin-bottom: 0.5em;
+}
+#contacts_filter > label > input{
+    width: 100%;
+    height: 35px;
+
+    margin: 0;
+    padding: 4px 8px 4px 8px;
+    /* border-radius: 7px; */
+
+    font-family: 'Varela Round', sans-serif;
+    letter-spacing: 0.5px;
+
+    outline: 0;
+    border: none;
+    border-bottom: solid .5px rgb(192, 192, 192);
+
+    transition: all .5s ease;
+}
+/* #contacts_filter > label > input:focus{
+    width: 100%;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(67, 67, 67,.3);
+} */
+#contacts_filter > label{
+    display: block;
+    margin: 0;
 }

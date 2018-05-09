@@ -4,7 +4,7 @@
         <title>Daru Chat</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
-        <link rel="stylesheet" type="text/css" href="datatables_css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="datatables_css/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
@@ -25,7 +25,7 @@
             </form>
           </div>
         </div>
-        <div class="canvas" id="dashboard">
+        <div class="canvas" id="dashboard" style="overflow-x: hidden; overflow-y: scroll;">
           <div class="ladangcurhat-navbar">
               <span style="position: absolute; right: 5vw;">
                   <span class="link">Home</span>
@@ -37,109 +37,265 @@
               <div class="dashboard-profile">
                 <div id="profile">
                   <div id="profilePicture">
-                    <!-- <img src="http://localhost:4500/img/1512297426122.jpg"> -->
+                    <img src="images/1512297426122.jpg" style="height: 200px;">
                   </div>
                   <h1 id="username">Agustinus Theodorus</h1>
                 </div>
               </div>
-              <div class="dashboard-contacts">
-                <table id="table_id" class="display">
+              <div class="dashboard-contacts" style="width:80%; margin-left: auto; margin-right: auto; margin-top: 50px; margin-bottom: 30px;">
+                <table id="contacts" class="display">
                   <thead>
                       <tr>
-                          <th>Column 1</th>
-                          <th>Column 2</th>
+                          <th>Name</th>
+                          <th>Position</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
-                          <td>Row 1 Data 1</td>
-                          <td>Row 1 Data 2</td>
+                          <td>Tiger Nixon</td>
+                          <td colspan="6">System Architect</td>
                       </tr>
                       <tr>
-                          <td>Row 2 Data 1</td>
-                          <td>Row 2 Data 2</td>
+                          <td>Garrett Winters</td>
+                          <td colspan="6">Accountant</td>
+                      </tr>
+                      <tr>
+                          <td>Ashton Cox</td>
+                          <td colspan="6">Junior Technical Author</td>
+                      </tr>
+                      <tr>
+                          <td>Cedric Kelly</td>
+                          <td colspan="6">Senior Javascript Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Airi Satou</td>
+                          <td colspan="6">Accountant</td>
+                      </tr>
+                      <tr>
+                          <td>Brielle Williamson</td>
+                          <td colspan="6">Integration Specialist</td>
+                      </tr>
+                      <tr>
+                          <td>Herrod Chandler</td>
+                          <td colspan="6">Sales Assistant</td>
+                      </tr>
+                      <tr>
+                          <td>Rhona Davidson</td>
+                          <td colspan="6">Integration Specialist</td>
+                      </tr>
+                      <tr>
+                          <td>Colleen Hurst</td>
+                          <td colspan="6">Javascript Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Sonya Frost</td>
+                          <td colspan="6">Software Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Jena Gaines</td>
+                          <td colspan="6">Office Manager</td>
+                      </tr>
+                      <tr>
+                          <td>Quinn Flynn</td>
+                          <td colspan="6">Support Lead</td>
+                      </tr>
+                      <tr>
+                          <td>Charde Marshall</td>
+                          <td colspan="6">Regional Director</td>
+                      </tr>
+                      <tr>
+                          <td>Haley Kennedy</td>
+                          <td colspan="6">Senior Marketing Designer</td>
+                      </tr>
+                      <tr>
+                          <td>Tatyana Fitzpatrick</td>
+                          <td colspan="6">Regional Director</td>
+                      </tr>
+                      <tr>
+                          <td>Michael Silva</td>
+                          <td colspan="6">Marketing Designer</td>
+                      </tr>
+                      <tr>
+                          <td>Paul Byrd</td>
+                          <td colspan="6">Chief Financial Officer (CFO)</td>
+                      </tr>
+                      <tr>
+                          <td>Gloria Little</td>
+                          <td colspan="6">Systems Administrator</td>
+                      </tr>
+                      <tr>
+                          <td>Bradley Greer</td>
+                          <td colspan="6">Software Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Dai Rios</td>
+                          <td colspan="6">Personnel Lead</td>
+                      </tr>
+                      <tr>
+                          <td>Jenette Caldwell</td>
+                          <td colspan="6">Development Lead</td>
+                      </tr>
+                      <tr>
+                          <td>Yuri Berry</td>
+                          <td colspan="6">Chief Marketing Officer (CMO)</td>
+                      </tr>
+                      <tr>
+                          <td>Caesar Vance</td>
+                          <td colspan="6">Pre-Sales Support</td>
+                      </tr>
+                      <tr>
+                          <td>Doris Wilder</td>
+                          <td colspan="6">Sales Assistant</td>
+                      </tr>
+                      <tr>
+                          <td>Angelica Ramos</td>
+                          <td colspan="6">Chief Executive Officer (CEO)</td>
+                      </tr>
+                      <tr>
+                          <td>Gavin Joyce</td>
+                          <td colspan="6">Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Jennifer Chang</td>
+                          <td colspan="6">Regional Director</td>
+                      </tr>
+                      <tr>
+                          <td>Brenden Wagner</td>
+                          <td colspan="6">Software Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Fiona Green</td>
+                          <td colspan="6">Chief Operating Officer (COO)</td>
+                      </tr>
+                      <tr>
+                          <td>Shou Itou</td>
+                          <td colspan="6">Regional Marketing</td>
+                      </tr>
+                      <tr>
+                          <td>Michelle House</td>
+                          <td colspan="6">Integration Specialist</td>
+                      </tr>
+                      <tr>
+                          <td>Suki Burks</td>
+                          <td colspan="6">Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Prescott Bartlett</td>
+                          <td colspan="6">Technical Author</td>
+                      </tr>
+                      <tr>
+                          <td>Gavin Cortez</td>
+                          <td colspan="6">Team Leader</td>
+                      </tr>
+                      <tr>
+                          <td>Martena Mccray</td>
+                          <td colspan="6">Post-Sales support</td>
+                      </tr>
+                      <tr>
+                          <td>Unity Butler</td>
+                          <td colspan="6">Marketing Designer</td>
+                      </tr>
+                      <tr>
+                          <td>Howard Hatfield</td>
+                          <td colspan="6">Office Manager</td>
+                      </tr>
+                      <tr>
+                          <td>Hope Fuentes</td>
+                          <td colspan="6">Secretary</td>
+                      </tr>
+                      <tr>
+                          <td>Vivian Harrell</td>
+                          <td colspan="6">Financial Controller</td>
+                      </tr>
+                      <tr>
+                          <td>Timothy Mooney</td>
+                          <td colspan="6">Office Manager</td>
+                      </tr>
+                      <tr>
+                          <td>Jackson Bradshaw</td>
+                          <td colspan="6">Director</td>
+                      </tr>
+                      <tr>
+                          <td>Olivia Liang</td>
+                          <td colspan="6">Support Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Bruno Nash</td>
+                          <td colspan="6">Software Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Sakura Yamamoto</td>
+                          <td colspan="6">Support Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Thor Walton</td>
+                          <td colspan="6">Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Finn Camacho</td>
+                          <td colspan="6">Support Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Serge Baldwin</td>
+                          <td colspan="6">Data Coordinator</td>
+                      </tr>
+                      <tr>
+                          <td>Zenaida Frank</td>
+                          <td colspan="6">Software Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Zorita Serrano</td>
+                          <td colspan="6">Software Engineer</td>
+                      </tr>
+                      <tr>
+                          <td>Jennifer Acosta</td>
+                          <td colspan="6">Junior Javascript Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Cara Stevens</td>
+                          <td colspan="6">Sales Assistant</td>
+                      </tr>
+                      <tr>
+                          <td>Hermione Butler</td>
+                          <td colspan="6">Regional Director</td>
+                      </tr>
+                      <tr>
+                          <td>Lael Greer</td>
+                          <td colspan="6">Systems Administrator</td>
+                      </tr>
+                      <tr>
+                          <td>Jonas Alexander</td>
+                          <td colspan="6">Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Shad Decker</td>
+                          <td colspan="6">Regional Director</td>
+                      </tr>
+                      <tr>
+                          <td>Michael Bruce</td>
+                          <td colspan="6">Javascript Developer</td>
+                      </tr>
+                      <tr>
+                          <td>Donna Snider</td>
+                          <td colspan="6">Customer Support</td>
                       </tr>
                   </tbody>
+                  <tfoot>
+                      <tr>
+                          <th>Name</th>
+                          <th>Position</th>
+                      </tr>
+                  </tfoot>
                 </table>
               </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="script/dataTables.js"></script>
+    <script src="jquery/jquery.min.js"></script>
     <script src="datatables/jquery.dataTables.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      var counter = 0;
-      $('.dashboard').hide();
-        $('#nextPage').click(function(){
-          if(counter === 0){
-            $('#mainContainer').addClass("move-left");
-            $('#nextPage').removeClass("arrow-to-right to-right");
-            $('#nextPage').addClass("arrow-to-left to-left");
-            $('.dashboard').show();
-            setTimeout("$('.ladangcurhat-navbar').toggleClass('show-navbar');", 250);
-            setTimeout("$('#messagesOutput').hide();", 200);
-            counter++;
-          }
-          else{
-            $('#mainContainer').removeClass("move-left");
-            $('#nextPage').addClass("arrow-to-right to-right");
-            $('#nextPage').removeClass("arrow-to-left to-left");
-            $('#messagesOutput').show();
-            $('.ladangcurhat-navbar').toggleClass('show-navbar');
-            setTimeout("$('.dashboard').hide();", 200);
-            counter--;
-          }
-        });
-    $(function () {
-        var socket = io();
-        var clientID;
-        var currClient = ""; 
-        var userName = "";
-        socket.on('connected', function(response) {
-          clientID = response.clientID;
-          console.log(clientID);
-        });
-        $('form').submit(function(){
-          var str = $('#m').val();
-          if (!(str.replace(/\s/g, '').length == 0)) {
-            socket.emit('chat message', $('#m').val());
-          }
-          $('#m').val('');
-          return false;
-        });
-        socket.on('chat message', function(data) {
-          var msg = data.message;
-          var clientName = data.clientName;
-          if(userName == clientName){
-            if(currClient != clientName){
-              $('#messages').append('<li><span class="sender-name">' + clientName + '</span><br><span class="speech-bubble">' + msg + '</span></li>');
-              currClient = clientName;
-            }
-            else{
-              $('#messages').append('<li><span class="speech-bubble">' + msg + '</span></li>');
-            } 
-          }
-          else{
-            if(currClient != clientName){
-              $('#messages').append('<li class="overflow-auto"><div class="overflow-auto float-right"><span class="sender-name float-right">' + clientName + '</span><br><span class="speech-bubble">' + msg + '</span></div></li>');
-              currClient = clientName;
-            }
-            else{
-              $('#messages').append('<li style="overflow: auto;"><div class="float-right"><span class="speech-bubble">' + msg + '</span></div></li>');
-            }
-          }
-        });
-        socket.on('nameResult', function(result) {
-          if(userName == ""){
-            userName = result.name;
-          }
-          $('#messages').append($('<li class="sender-name text-center">').text('Welcome ' + result.name));
-        });
-    });
-    </script>
+    <script src="script/index.js"></script>
   </body>
 </html>
     
