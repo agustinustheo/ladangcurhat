@@ -4,7 +4,7 @@ const server = require('http').Server(app);
 const chatServer = require('./src/lib/chatServer');
 
 const hostname = '127.0.0.1';
-const port = 4500;
+const port = server.listen(process.env.PORT || 3000);
 
 app.use('/stylesheet', express.static(__dirname + '/public/stylesheet/'));
 app.use('/script', express.static(__dirname + '/public/script/'));
@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 });
 
 server.listen(port, function(){
-  console.log('Server on port 4500');
+  console.log('Server on port 3000');
 });
 
 chatServer.listen(server);

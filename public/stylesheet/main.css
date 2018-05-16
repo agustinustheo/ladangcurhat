@@ -209,7 +209,7 @@ form button:focus{
 
         position: fixed;
         line-height: 70px;
-        top: calc(50% - 50px);
+        bottom: 60px;
     }
     .to-left{
         right: calc(100vw - 60px);
@@ -237,13 +237,10 @@ form button:focus{
     z-index: 10;
 }
 .next-page:hover{
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.808);
+    box-shadow: 0 0 15px rgba(61, 61, 61, 0.808);
 }
 .move-left{
     transform: translate(-100vw, 0);
-}
-.to-left{
-    right: calc(100vw - 110px);
 }
 .to-right{
     right: 10px;
@@ -258,52 +255,8 @@ form button:focus{
 .background-whiteblue{
     background:#fff;
 }
-#mainContainer{
-    transition: all .3s ease-out;
-    width: 200vw;
-}
-#profile{
-    display: grid;
-    grid-template-columns: 210px 615px;
-    width: 825px;
 
-    margin: auto;
-    overflow: auto;
-}
-.dashboard-profile{
-    width: 100vw;
-    padding-top: 40px;
-}
-#profilePicture{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-
-    background:deepskyblue;
-    overflow: hidden;
-}
-#username{
-    font-size: 41pt;;
-    color: #414141;
-    margin: auto;
-    transition: all 1s ease;
-}
-#username:hover{
-    font-size: 43pt;
-    color: #282828;
-    cursor: pointer;
-}
-.link{
-    margin: 0px 20px 0 20px;
-    line-height: 60px;
-
-    display: inline-block;
-
-    font-size: 16pt;
-    /* font-family: 'Open Sans Condensed', sans-serif; */
-
-    cursor: pointer;
-}
+/*-------------------------------------NAVBAR DEFAULT---------------------------------------------*/
 .ladangcurhat-navbar{
     width: 100vw;
     height: 60px;
@@ -320,6 +273,77 @@ form button:focus{
 }
 .hide-navbar{
     transform: translate3d(0, -70px, 0);
+}
+@media screen and (min-width: 420px){
+    #profile{
+        grid-template-rows: 1fr;
+        grid-template-columns: 210px 615px;
+        width: 825px;
+    }
+    #username{
+        font-size: 41pt;
+    }
+    #username:hover{
+        font-size: 43pt;
+    }
+}
+@media screen and (max-width: 420px){
+    #profile{
+        grid-template-rows: 210px 50px;
+        grid-template-columns: 1fr;
+        width: 100vw;
+    }
+    #username{
+        font-size: 20pt;
+        margin-top: 15px;
+    }
+    #username:hover{
+        font-size: 22pt;
+    }
+}
+/*-------------------------------------CANVAS PROFILE DEFAULT---------------------------------------------*/
+#mainContainer{
+    transition: all .3s ease-out;
+    width: 200vw;
+}
+#profile{
+    display: grid;
+
+    margin: auto;
+    overflow: auto;
+}
+.dashboard-profile{
+    width: 100vw;
+    padding-top: 40px;
+}
+#profilePicture{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+
+    background:deepskyblue;
+    overflow: hidden;
+}
+#username{
+    color: #414141;
+    text-align: center;
+    transition: all 1s ease;
+}
+#username:hover{
+    color: #282828;
+    cursor: pointer;
+}
+.link{
+    margin: 0px 20px 0 20px;
+    line-height: 60px;
+
+    display: inline-block;
+
+    font-size: 16pt;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
+
+    cursor: pointer;
 }
 .dashboard-profile{
     margin-top: 40px;
