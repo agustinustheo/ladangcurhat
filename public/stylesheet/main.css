@@ -367,3 +367,9 @@ form button:focus{
     display: block;
     margin: 0;
 }
+.profilePictureWidth{
+    width: 40px;
+}
+#smallProfilePicture{
+    width: 40px; height:40px; border-radius: 50%; margin: auto; overflow: hidden;
+}
