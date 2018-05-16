@@ -242,9 +242,6 @@ form button:focus{
 .move-left{
     transform: translate(-100vw, 0);
 }
-.to-left{
-    right: calc(100vw - 110px);
-}
 .to-right{
     right: 10px;
 }
