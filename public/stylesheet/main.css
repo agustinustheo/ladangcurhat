@@ -1,11 +1,15 @@
 /*-------------------------------------DEFAULT SETTINGS---------------------------------------------*/
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-size: 13px;
-    font-family: 'Varela Round', sans-serif; 
+    font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.5px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
 }
 
 ::-webkit-scrollbar{
@@ -22,33 +26,49 @@
 .overflow-auto{
     overflow: auto;
 }
+.canvas{
+    width: 100vw;
+    height: 100vh;
+}
 
-/*-------------------------------------MESSAGE BODY---------------------------------------------*/
+/*-------------------------------------MESSAGE BODY RESPONSIVE 1---------------------------------------------*/
+@media screen and (min-width: 410px){
+    .speech-bubble{
+        max-width: 300px;
+        font-size: 13px;
+    }
+}
+/*-------------------------------------MESSAGE BODY RESPONSIVE 2---------------------------------------------*/
+@media screen and (max-width: 410px){
+    .speech-bubble{
+        max-width: 230px;
+        font-size: 11px;
+    }
+}
+/*-------------------------------------MESSAGE BODY DEFAULT---------------------------------------------*/
 .message-output{
     position: fixed;
     width: calc(100% - 40px);
     height: calc(100% - 50px);
     overflow-y: auto;
 }
-form {  
-    padding: 3px; 
-    position: fixed; 
-    bottom: 0; 
+form {
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
-#messages { 
-    list-style-type: none; 
+#messages {
+    list-style-type: none;
     margin-top: 10px;
     margin-left: 30px;
     margin-right: 20px;
-    padding: 0; 
+    padding: 0;
 }
 .speech-bubble{
     word-wrap: break-word;
-    max-width: 300px;
     position: relative;
     display: inline-block;
-    font-size: 13px;
     border-radius: 25px;
     padding: 10px;
     margin-top: 2px;
@@ -79,7 +99,7 @@ form {
     }
 }
 /*-------------------------------------CHAT BOX RESPONSIVE 3---------------------------------------------*/
-@media screen and (max-width: 570px){
+@media screen and (min-width: 410px) and (max-width: 570px){
     form button{
         width: calc(19% - 20px);
     }
@@ -87,20 +107,29 @@ form {
         width: calc(80% - 20px);
     }
 }
+/*-------------------------------------CHAT BOX RESPONSIVE 4---------------------------------------------*/
+@media screen and (max-width: 410px){
+    form button{
+        width: calc(24% - 20px);
+    }
+    form input{
+        width: calc(75% - 20px);
+    }
+}
 
 /*-------------------------------------CHAT BOX DEFAULT---------------------------------------------*/
 /*----------MESSAGE INPUT DEFAULT-------------*/
-form input { 
-    border: 0; 
-    padding: 10px;  
+form input {
+    border: 0;
+    padding: 10px;
     margin: 5px;
     margin-left: 20px;
     margin-right: .5%;
     border-radius: 15px;
     font-size: 13px;
-    font-family: 'Varela Round', sans-serif; 
+    font-family: 'Varela Round', sans-serif;
     letter-spacing: 0.5px;
-    border: solid .5px lightskyblue; 
+    border: solid .5px lightskyblue;
     outline: 0;
 }
 form input:focus{
@@ -108,22 +137,233 @@ form input:focus{
 }
 
 /*----------SEND BUTTON DEFAULT-------------*/
-form button { 
-    margin-right: 20px; 
+form button {
+    margin-right: 20px;
     line-height: 18px;
- 
+
     background: white;
     border: none;
-    border-radius: 10px;  
+    border-radius: 10px;
     padding: 10px;
-    border: solid .5px lightskyblue; 
-    
+    border: solid .5px lightskyblue;
+
     cursor: pointer;
-    transition: all .2s ease-in-out; 
+    transition: all .5s ease-in-out;
 }
 form button:hover{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 form button:focus{
     outline: 0;
+}
+
+/*-------------------------------------NEXT BUTTON RESPONSIVE 1---------------------------------------------*/
+@media screen and (min-width: 956px){
+    .arrow {
+        border: solid rgb(145, 145, 145);
+        border-width: 0 10px 10px 0;
+        padding: 18px;
+    }
+    .next-page{
+        width: 100px;
+        height: 100px;
+
+        position: fixed;
+        line-height: 140px;
+        top: calc(50% - 100px);
+    }
+    .to-left{
+        right: calc(100vw - 110px);
+    }
+}
+
+/*-------------------------------------NEXT BUTTON RESPONSIVE 2---------------------------------------------*/
+@media screen and (min-width: 410px) and (max-width: 956px){
+    .arrow {
+        border: solid rgb(145, 145, 145);
+        border-width: 0 8px 8px 0;
+        padding: 14px;
+    }
+    .next-page{
+        width: 80px;
+        height: 80px;
+
+        position: fixed;
+        line-height: 112px;
+        top: calc(50% - 80px);
+    }
+    .to-left{
+        right: calc(100vw - 90px);
+    }
+}
+/*-------------------------------------NEXT BUTTON RESPONSIVE 3---------------------------------------------*/
+@media screen and (max-width: 410px){
+    .arrow {
+        border: solid rgb(145, 145, 145);
+        border-width: 0 5px 5px 0;
+        padding: 10px;
+    }
+    .next-page{
+        width: 50px;
+        height: 50px;
+
+        position: fixed;
+        line-height: 70px;
+        top: calc(50% - 50px);
+    }
+    .to-left{
+        right: calc(100vw - 60px);
+    }
+}
+/*-------------------------------------NEXT BUTTON DEFAULT---------------------------------------------*/
+.arrow {
+    display: inline-block;
+
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.next-page{
+    background: rgb(219, 219, 219);
+    opacity: .4;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+}
+.next-page:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.808);
+}
+.move-left{
+    transform: translate(-100vw, 0);
+}
+.to-left{
+    right: calc(100vw - 110px);
+}
+.to-right{
+    right: 10px;
+}
+.arrow-to-right{
+    margin-right: 10px;
+}
+.arrow-to-left{
+    transform: rotate(180deg);
+    margin-right: 0px;
+}
+.background-whiteblue{
+    background:#fff;
+}
+#mainContainer{
+    transition: all .3s ease-out;
+    width: 200vw;
+}
+#profile{
+    display: grid;
+    grid-template-columns: 210px 615px;
+    width: 825px;
+
+    margin: auto;
+    overflow: auto;
+}
+.dashboard-profile{
+    width: 100vw;
+    padding-top: 40px;
+}
+#profilePicture{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    background:deepskyblue;
+    overflow: hidden;
+}
+#username{
+    font-size: 41pt;;
+    color: #414141;
+    margin: auto;
+    transition: all 1s ease;
+}
+#username:hover{
+    font-size: 43pt;
+    color: #282828;
+    cursor: pointer;
+}
+.link{
+    margin: 0px 20px 0 20px;
+    line-height: 60px;
+
+    display: inline-block;
+
+    font-size: 16pt;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
+
+    cursor: pointer;
+}
+.ladangcurhat-navbar{
+    width: 100vw;
+    height: 60px;
+
+    position: relative;
+    color: #515151;
+    box-shadow: 0 2px 20px -2px #bababa;
+
+    transform: translate3d(0, -70px, 0);
+    transition: all .5s ease;
+}
+.show-navbar{
+    transform: translate3d(0, 0, 0);
+}
+.hide-navbar{
+    transform: translate3d(0, -70px, 0);
+}
+.dashboard-profile{
+    margin-top: 40px;
+}
+.dashboard-content{
+    width: 100%;
+    margin-top: 20px;
+}
+#table_id{
+    margin: auto;
+}
+#contacts_wrapper{
+    width: 100%;
+}
+.contact-info > #contacts_info, .contact-page > #contacts_paginate{
+    float: none;
+    text-align: center;
+}
+#contacts_filter{
+    float: none;
+    margin-bottom: 0.5em;
+}
+#contacts_filter > label > input{
+    width: 100%;
+    height: 35px;
+
+    margin: 0;
+    padding: 4px 8px 4px 8px;
+    /* border-radius: 7px; */
+
+    font-family: 'Varela Round', sans-serif;
+    letter-spacing: 0.5px;
+
+    outline: 0;
+    border: none;
+    border-bottom: solid .5px rgb(192, 192, 192);
+
+    transition: all .5s ease;
+}
+/* #contacts_filter > label > input:focus{
+    width: 100%;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(67, 67, 67,.3);
+} */
+#contacts_filter > label{
+    display: block;
+    margin: 0;
 }
