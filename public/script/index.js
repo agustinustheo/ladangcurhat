@@ -23,7 +23,13 @@ $(document).ready(function() {
     } );
     $('#contacts_filter label input').attr("placeholder", "Search..");
     $('.dashboard').hide();
+    $('#nextPage').hide();
 } );
+
+$('#continueAsGuest').click(function(){
+    $('#loginCanvas').hide();
+    $('#nextPage').show();
+});
 
 var counter = 0;
 $('#nextPage').click(function(){
@@ -46,6 +52,7 @@ $('#nextPage').click(function(){
     counter--;
     }
 });
+
 
 
 /*---------------------------CLIENT SIDE CHAT SYSTEM---------------------------*/

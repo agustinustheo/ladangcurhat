@@ -52,9 +52,9 @@
     height: calc(100% - 50px);
     overflow-y: auto;
 }
-form {
+#chatForm {
     padding: 3px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -82,44 +82,44 @@ form {
 
 /*-------------------------------------CHAT BOX RESPONSIVE 1---------------------------------------------*/
 @media screen and (min-width: 900px){
-    form button{
+    .chat-button{
         width: calc(9% - 20px);
     }
-    form input{
+    .chat-textbox{
         width: calc(90% - 20px);
     }
 }
 /*-------------------------------------CHAT BOX RESPONSIVE 2---------------------------------------------*/
 @media screen and (min-width: 570px) and (max-width: 900px){
-    form button{
+    .chat-button{
         width: calc(14% - 20px);
     }
-    form input{
+    .chat-textbox{
         width: calc(85% - 20px);
     }
 }
 /*-------------------------------------CHAT BOX RESPONSIVE 3---------------------------------------------*/
 @media screen and (min-width: 410px) and (max-width: 570px){
-    form button{
+    .chat-button{
         width: calc(19% - 20px);
     }
-    form input{
+    .chat-textbox{
         width: calc(80% - 20px);
     }
 }
 /*-------------------------------------CHAT BOX RESPONSIVE 4---------------------------------------------*/
 @media screen and (max-width: 410px){
-    form button{
+    .chat-button{
         width: calc(24% - 20px);
     }
-    form input{
+    .chat-textbox{
         width: calc(75% - 20px);
     }
 }
 
 /*-------------------------------------CHAT BOX DEFAULT---------------------------------------------*/
 /*----------MESSAGE INPUT DEFAULT-------------*/
-form input {
+.chat-textbox {
     border: 0;
     padding: 10px;
     margin: 5px;
@@ -132,12 +132,12 @@ form input {
     border: solid .5px lightskyblue;
     outline: 0;
 }
-form input:focus{
+.chat-textbox:focus{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.3);
 }
 
 /*----------SEND BUTTON DEFAULT-------------*/
-form button {
+.chat-button {
     margin-right: 20px;
     line-height: 18px;
 
@@ -150,10 +150,10 @@ form button {
     cursor: pointer;
     transition: all .5s ease-in-out;
 }
-form button:hover{
+.chat-button:hover{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
-form button:focus{
+.chat-button:focus{
     outline: 0;
 }
 
@@ -280,11 +280,11 @@ form button:focus{
         grid-template-columns: 210px 615px;
         width: 825px;
     }
-    #username{
+    #profileUsername{
         font-size: 41pt;
         margin: auto;
     }
-    #username:hover{
+    #profileUsername:hover{
         font-size: 43pt;
     }
 }
@@ -294,11 +294,11 @@ form button:focus{
         grid-template-columns: 1fr;
         width: 100vw;
     }
-    #username{
+    #profileUsername{
         font-size: 20pt;
         margin: 15px 0 0 0;
     }
-    #username:hover{
+    #profileUsername:hover{
         font-size: 21pt;
     }
 }
@@ -326,12 +326,12 @@ form button:focus{
     background:deepskyblue;
     overflow: hidden;
 }
-#username{
+#profileUsername{
     color: #414141;
     text-align: center;
     transition: all 1s ease;
 }
-#username:hover{
+#profileUsername:hover{
     color: #282828;
     cursor: pointer;
 }

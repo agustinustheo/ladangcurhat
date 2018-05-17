@@ -16,6 +16,9 @@ app.use('/jquery', express.static(__dirname + '/node_modules/jquery/'));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
+app.get('/signup', function(req, res){
+  res.sendFile(__dirname + '/public/signup.html');
+});
 
 server.listen(port, function(){
   console.log('Server on port 3000');
