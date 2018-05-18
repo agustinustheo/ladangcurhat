@@ -10,6 +10,7 @@
   "author": "Agustinus Theodorus",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "2.0.1",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
     "datatables.net": "1.10.16",
@@ -17,6 +18,8 @@
     "express": "^4.15.2",
     "heroku": "7.0.45",
     "jquery": "^1.9.1",
+    "jsonwebtoken": "8.2.1",
+    "mongoose": "5.1.1",
     "nodemon": "^1.17.2",
     "popper.js": "^1.14.1",
     "socket.io": "^2.0.4"
