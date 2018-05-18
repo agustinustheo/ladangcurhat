@@ -21,6 +21,8 @@
     "jsonwebtoken": "8.2.1",
     "mongoose": "5.1.1",
     "nodemon": "^1.17.2",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
     "popper.js": "^1.14.1",
     "socket.io": "^2.0.4"
   },

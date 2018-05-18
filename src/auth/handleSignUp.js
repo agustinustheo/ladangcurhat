@@ -1,8 +1,8 @@
 const User = require('../db/models/User')
 const jwt = require('jsonwebtoken')
-
 // Temporary secret key TODO: Use process.env to store secret key
-const secretKey = 'shhh this is a secret';
+const secretKey = require('./tempSecretKey');
+
 
 module.exports = function(req, res) {
   const { username, password } = req.body;
@@ -33,11 +33,12 @@ module.exports = function(req, res) {
           error: err,
         })
       } else {
-        jwt.sign({ user: user }, secretKey, (err, token) => {
+        jwt.sign({ user }, secretKey, (err, token) => {
           const result = err ? err : token
           res.status(201).send({
-            createdUser: savedUser.username,
-            token: token,
+            _id: savedUser._id,
+            username: savedUser.username,
+            token,
           })
         })
       }
