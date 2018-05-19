@@ -399,6 +399,19 @@
     overflow: hidden;
 }
 
+@media screen and (min-width: 450px){
+    .login-form{
+        width: 400px; 
+        left: calc((100% - 400px) / 2); 
+    }
+}
+@media screen and (max-width: 450px){
+    .login-form{
+        width: 300px;
+        left: calc((100% - 300px) / 2); 
+    }
+}
+
 /*-------------------------------------LOGIN FORM DEFAULT---------------------------------------------*/
 .login-modal{
     position: relative; 
@@ -418,24 +431,11 @@
     transition: all 1s ease-in;
 }
 .login-form{
-    width: 400px; 
-
     position:fixed; 
     
     top: calc((100% - 400px) / 2); 
-    left: calc((100% - 400px) / 2); 
     display:block; 
     
-    background: white; 
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-}
-#loginBox{
-    position:fixed; 
-    top: calc((100% - 400px) / 2); 
-    left: calc((100% - 400px) / 2); 
-    display:block; 
-    
-    width: 400px; 
     background: white; 
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }

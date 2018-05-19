@@ -12,7 +12,7 @@
   <body class="background-whiteblue">
     <div class="login-canvas">
         <div class="login-modal">
-            <div id="loginBox">
+            <div class="login-form">
                 <form style="margin: 20px;">
                     <h1 style="margin-bottom: 20px";>Sign In</h1>
                     <label for="username" class="label-title">Username</label>
@@ -24,7 +24,7 @@
                             <input type="checkbox" class="form-check-input" id="alwaysSignedIn">
                             <label class="form-check-label" for="alwaysSignedIn">Keep me signed in</label>
                         </div>
-                        <buttonclass="btn btn-success btn-signin">Sign In</button>
+                        <button id="btnSignIn" class="btn btn-success btn-signin">Sign In</button>
                         <button class="btn btn-success btn-guest">Continue as Guest</button>
                         <a href="/signup" class="btn-link">Don't have an account? Sign up here</a>
                     </div>
@@ -369,6 +369,7 @@
       </div>
     </div>
     <script src="jquery/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script src="datatables/jquery.dataTables.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script/index.js"></script>
