@@ -75,17 +75,34 @@ function goRight(){
     setTimeout("$('.dashboard').hide();", 200);
 }
 
-
 /*---------------------------CLIENT SIDE CHAT SYSTEM---------------------------*/
 $(function () {
     var socket = io();
     var clientID;
     var currClient = ""; 
     var userName = "";
+
     socket.on('connected', function(response) {
         clientID = response.clientID;
         console.log(clientID);
+        
+        // if user is authenticated
+        if(localStorage.getItem('authData') !== null) {
+            // get auth data from local storage
+            let userData = JSON.parse(localStorage.getItem('authData'));
+            // and send it to server with auth flag = true
+            socket.emit('authentication', {
+                authenticated: true,
+                username: userData.username
+            });
+        } else {
+            // send auth flag = false
+            socket.emit('authentication', {
+                authenticated: false,
+            });
+        }
     });
+
     $('form').submit(function(){
         var str = $('#m').val();
         if (!(str.replace(/\s/g, '').length == 0)) {
