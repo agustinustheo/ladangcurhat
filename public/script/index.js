@@ -26,8 +26,8 @@ $(document).ready(function() {
     $('#nextPage').hide();
 } );
 
-$('#continueAsGuest').click(function(){
-    $('#loginCanvas').hide();
+$('.btn-guest').click(function(){
+    $('.login-canvas').hide();
     $('#nextPage').show();
 });
 

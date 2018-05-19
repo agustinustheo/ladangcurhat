@@ -342,7 +342,6 @@
     display: inline-block;
 
     font-size: 16pt;
-    /* font-family: 'Open Sans Condensed', sans-serif; */
 
     cursor: pointer;
 }
@@ -398,4 +397,63 @@
     border-radius: 50%; 
     margin: auto; 
     overflow: hidden;
+}
+
+/*-------------------------------------LOGIN FORM DEFAULT---------------------------------------------*/
+.login-modal{
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    background: rgb(255, 255, 255, 0.5); 
+    display: block;
+}
+.login-canvas{
+    overflow: hidden; 
+    position: fixed; 
+    
+    width: 100vw; 
+    height: 100vh; 
+    
+    z-index: 20;  
+    transition: all 1s ease-in;
+}
+.login-form{
+    width: 400px; 
+
+    position:fixed; 
+    
+    top: calc((100% - 400px) / 2); 
+    left: calc((100% - 400px) / 2); 
+    display:block; 
+    
+    background: white; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+#loginBox{
+    position:fixed; 
+    top: calc((100% - 400px) / 2); 
+    left: calc((100% - 400px) / 2); 
+    display:block; 
+    
+    width: 400px; 
+    background: white; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+.btn-guest{
+    margin: 10px 10px 10px 0; 
+    padding: .4rem 1.5rem;
+}
+.btn-signin{
+    margin: 10px 10px 10px 0; 
+    padding: .4rem 1.5rem;
+}
+.label-title{
+    font-size: 10pt; 
+    color: grey; 
+    margin-bottom: 2px;
+}
+.btn-link{
+    cursor: pointer; 
+    margin-top: 5px; 
+    display: block;
 }
