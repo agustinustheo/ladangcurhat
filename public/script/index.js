@@ -34,25 +34,46 @@ $('.btn-guest').click(function(){
 var counter = 0;
 $('#nextPage').click(function(){
     if(counter === 0){
-    $('#mainContainer').addClass("move-left");
     $('#nextPage').removeClass("arrow-to-right to-right");
     $('#nextPage').addClass("arrow-to-left to-left");
-    $('.dashboard').show();
-    setTimeout("$('.ladangcurhat-navbar').toggleClass('show-navbar');", 250);
-    setTimeout("$('#messagesOutput').hide();", 200);
+    goLeft();
     counter++;
     }
     else{
-    $('#mainContainer').removeClass("move-left");
     $('#nextPage').addClass("arrow-to-right to-right");
     $('#nextPage').removeClass("arrow-to-left to-left");
-    $('#messagesOutput').show();
-    $('.ladangcurhat-navbar').toggleClass('show-navbar');
-    setTimeout("$('.dashboard').hide();", 200);
+    goRight();
     counter--;
     }
 });
 
+$(document).on('swipeleft', function(){
+    if(counter === 0){
+        goLeft();
+        counter++;
+    }
+});
+
+$(document).on('swiperight', function(){
+    if(counter !== 0){
+        goRight();
+        counter--;
+    }
+});
+
+function goLeft(){
+    $('#mainContainer').addClass("move-left");
+    $('.dashboard').show();
+    setTimeout("$('.ladangcurhat-navbar').toggleClass('show-navbar');", 250);
+    setTimeout("$('#messagesOutput').hide();", 200);
+}
+
+function goRight(){
+    $('#mainContainer').removeClass("move-left");
+    $('#messagesOutput').show();
+    $('.ladangcurhat-navbar').toggleClass('show-navbar');
+    setTimeout("$('.dashboard').hide();", 200);
+}
 
 
 /*---------------------------CLIENT SIDE CHAT SYSTEM---------------------------*/
