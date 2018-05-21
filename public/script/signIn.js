@@ -1,3 +1,5 @@
+const port = process.env.PORT || 3000;
+
 $('#signin-btn').click(function(e) {
   e.preventDefault();
   var data = {};
@@ -7,7 +9,7 @@ $('#signin-btn').click(function(e) {
     type: 'POST',
     data: JSON.stringify(data),
     contentType: 'application/json',
-    url: 'http://localhost:3000/signin',						
+    url: 'http://localhost:' + port + '/signin',						
     success: function(data) {
         console.log('success');
         localStorage.setItem('authData', JSON.stringify(data));
