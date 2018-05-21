@@ -24,6 +24,7 @@ $(document).ready(function() {
     $('#contacts_filter label input').attr("placeholder", "Search..");
     $('.dashboard').hide();
     $('#nextPage').hide();
+    $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').hide();    
 } );
 
 $('.btn-guest').click(function(){
@@ -72,6 +73,10 @@ function goRight(){
     $('#nextPage').removeClass("arrow-to-left to-left");
     counter--;
 }
+
+$(document).bind("mobileinit", function() {
+    $.mobile.ajaxEnabled = false;
+});
 
 /*---------------------------CLIENT SIDE CHAT SYSTEM---------------------------*/
 $(function () {
