@@ -278,6 +278,8 @@
 .hide-navbar{
     transform: translate3d(0, -70px, 0);
 }
+
+/*-------------------------------------CANVAS PROFILE RESPONSIVE 1---------------------------------------------*/
 @media screen and (min-width: 865px){
     #profile{
         grid-template-rows: 1fr;
@@ -292,6 +294,8 @@
         font-size: 43pt;
     }
 }
+
+/*-------------------------------------CANVAS PROFILE RESPONSIVE 2---------------------------------------------*/
 @media screen and (max-width: 420px){
     #profile{
         grid-template-rows: 210px 50px;
@@ -306,6 +310,7 @@
         font-size: 21pt;
     }
 }
+
 /*-------------------------------------CANVAS PROFILE DEFAULT---------------------------------------------*/
 #mainContainer{
     transition: all .3s ease-out;
@@ -403,12 +408,15 @@
     overflow: hidden;
 }
 
+/*-------------------------------------LOGIN FORM RESPONSIVE 1---------------------------------------------*/
 @media screen and (min-width: 450px){
     .login-form{
         width: 400px; 
         left: calc((100% - 400px) / 2); 
     }
 }
+
+/*-------------------------------------LOGIN FORM RESPONSIVE 2---------------------------------------------*/
 @media screen and (max-width: 450px){
     .login-form{
         width: 300px;
