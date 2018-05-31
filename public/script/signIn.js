@@ -1,6 +1,6 @@
-const port = process.env.PORT || 3000;
+const port = 3000;
 
-$('#signin-btn').click(function(e) {
+$('#btnSignIn').click(function(e) {
   e.preventDefault();
   var data = {};
   data.username = $('#username').val();
