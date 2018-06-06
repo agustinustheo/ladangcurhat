@@ -29,7 +29,6 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/c
 app.use('/datatables', express.static(__dirname + '/node_modules/datatables.net/js/'));
 app.use('/datatables_css', express.static(__dirname + '/node_modules/datatables.net-dt/'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/'));
-app.use('/jquery-mobile', express.static(__dirname + '/node_modules/jquery-mobile/js/'));
 app.use('/workbox', express.static(__dirname + '/node_modules/workbox-sw/build/workbox-sw.js'))
 
 // =========== Route Handlers =============
