@@ -5,7 +5,6 @@ const secretKey = require('./tempSecretKey');
 
 module.exports = function(req, res) {
   const { username, password } = req.body;
-  
   if(!username || !password) {
     return res.status(422).send({ error: 'You must provide username and password' })
   }

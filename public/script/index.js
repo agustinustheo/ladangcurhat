@@ -1,6 +1,7 @@
 /*---------------------------CLIENT SIDE SCRIPTS---------------------------*/
 $(document).ready(function() {
-    $('#contacts').DataTable( {
+    var contactTable = $('#contacts').DataTable( {
+        "iDisplayLength": 1000,
         "initComplete": function () {
             var api = this.api();
             api.$('td').click( function () {
@@ -11,9 +12,9 @@ $(document).ready(function() {
             $(oSettings.nTHead).hide();
             $(oSettings.nTFoot).hide();
         },
-        "iDisplayLength": 15,
         "bLengthChange": false,
-        "dom": '<"contact-search"f>t<"contact-page"p><"contact-info"i>',
+        "dom": '<"contact-search"f>t',
+        scrollY: '200',
         "language": {
             "info": "Showing _END_ of _TOTAL_ Contacts",
             "search": "",
@@ -21,10 +22,11 @@ $(document).ready(function() {
             "infoEmpty": "No contacts available"
         }
     } );
+    $('.canvas').height($(window).innerHeight());
     $('#contacts_filter label input').attr("placeholder", "Search..");
     $('.dashboard').hide();
     $('#nextPage').hide();
-    $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').hide();    
+    $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').hide();
 } );
 
 $('.btn-guest').click(function(){
@@ -42,17 +44,19 @@ $('#nextPage').click(function(){
     }
 });
 
-$(document).on('swipeleft', function(){
-    if(counter === 0){
-        goLeft();
-    }
-});
+if($('.login-canvas').is(":visible")){
+    $(document).on('swipeleft', function(){
+        if(counter === 0){
+            goLeft();
+        }
+    });
 
-$(document).on('swiperight', function(){
-    if(counter !== 0){
-        goRight();
-    }
-});
+    $(document).on('swiperight', function(){
+        if(counter !== 0){
+            goRight();
+        }
+    });
+}
 
 function goLeft(){
     $('#mainContainer').addClass("move-left");
@@ -78,6 +82,10 @@ $(document).bind("mobileinit", function() {
     $.mobile.ajaxEnabled = false;
 });
 
+$(window).on('resize', function(){
+    $('.canvas').height($(window).innerHeight());
+})
+
 /*---------------------------CLIENT SIDE CHAT SYSTEM---------------------------*/
 $(function () {
     var socket = io();
@@ -87,7 +95,6 @@ $(function () {
 
     socket.on('connected', function(response) {
         clientID = response.clientID;
-        console.log(clientID);
         
         // if user is authenticated
         if(localStorage.getItem('authData') !== null) {

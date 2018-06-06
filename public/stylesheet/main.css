@@ -32,7 +32,6 @@
 }
 .canvas{
     width: 100vw;
-    height: 100vh;
 }
 
 /*-------------------------------------MESSAGE BODY RESPONSIVE 1---------------------------------------------*/
@@ -293,6 +292,13 @@
     #profileUsername:hover{
         font-size: 43pt;
     }
+    .dashboard-profile{
+        margin-top: 40px;
+    }
+    .dashboard-contacts{
+        margin-top: 50px; 
+        margin-bottom: 30px;
+    }
 }
 
 /*-------------------------------------CANVAS PROFILE RESPONSIVE 2---------------------------------------------*/
@@ -308,6 +314,13 @@
     }
     #profileUsername:hover{
         font-size: 21pt;
+    }
+    .dashboard-profile{
+        margin-top: 20px;
+    }
+    .dashboard-contacts{
+        margin-top: 10px; 
+        margin-bottom: 0px;
     }
 }
 
@@ -354,12 +367,14 @@
 
     cursor: pointer;
 }
-.dashboard-profile{
-    margin-top: 40px;
-}
 .dashboard-content{
     width: 100%;
     margin-top: 20px;
+}
+.dashboard-contacts{
+    width:80%; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 #table_id{
     margin: auto;
@@ -468,4 +483,8 @@
     cursor: pointer; 
     margin-top: 5px; 
     display: block;
+}
+#contacts{
+    overflow-y: scroll;
+    height: 500px;
 }
