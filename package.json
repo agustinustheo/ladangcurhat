@@ -24,7 +24,8 @@
     "passport": "0.4.0",
     "passport-local": "1.0.0",
     "popper.js": "^1.14.1",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "workbox-sw": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "1.17.4"

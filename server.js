@@ -21,6 +21,7 @@ db.once('open', function() {
 })
 
 // ===========  Includes  =================
+app.use('/', express.static(__dirname));
 app.use('/stylesheet', express.static(__dirname + '/public/stylesheet/'));
 app.use('/script', express.static(__dirname + '/public/script/'));
 app.use('/images', express.static(__dirname + '/public/img/'));
@@ -28,7 +29,8 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/c
 app.use('/datatables', express.static(__dirname + '/node_modules/datatables.net/js/'));
 app.use('/datatables_css', express.static(__dirname + '/node_modules/datatables.net-dt/'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/'));
-app.use('/jquery-ui-touch-punch', express.static(__dirname + '/node_modules/jquery-ui-touch-punch/'));
+app.use('/jquery-mobile', express.static(__dirname + '/node_modules/jquery-mobile/js/'));
+app.use('/workbox', express.static(__dirname + '/node_modules/workbox-sw/build/workbox-sw.js'))
 
 // =========== Route Handlers =============
 const handleSignUp = require('./src/auth/handleSignUp');
