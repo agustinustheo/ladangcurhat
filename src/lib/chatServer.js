@@ -1,4 +1,5 @@
 const socketio = require('socket.io');
+const config = require('../../config');
 const assignGuestNumber = require('./helpers/assignGuestNumber');
 const assignUsername = require('./helpers/assignUsername')
 const handleMessageBroadcasting = require('./helpers/handleMessageBroadcasting');
@@ -13,7 +14,8 @@ exports.listen = function(server) {
     console.log('a user connected');
     // When client connects, send it its socket id
     socket.emit('connected', {
-      clientID: socket.id
+      clientID: socket.id,
+      PORT: config.PORT,
     });
     //receive authentication data from client
     socket.on('authentication', function(authData) {

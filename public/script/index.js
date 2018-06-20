@@ -95,7 +95,7 @@ $(function () {
 
     socket.on('connected', function(response) {
         clientID = response.clientID;
-        
+        localStorage.setItem('serverPort', response.PORT);
         // if user is authenticated
         if(localStorage.getItem('authData') !== null) {
             // get auth data from local storage

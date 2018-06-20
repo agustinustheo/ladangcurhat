@@ -1,4 +1,4 @@
-const port = 3000;
+const port = localStorage.getItem('serverPort');
 
 $('#btnSignIn').click(function(e) {
   e.preventDefault();
