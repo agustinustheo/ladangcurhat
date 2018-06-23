@@ -466,10 +466,6 @@
     background: white; 
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
-.btn-guest{
-    margin: 10px 10px 10px 0; 
-    padding: .4rem 1.5rem;
-}
 .btn-signin{
     margin: 10px 10px 10px 0; 
     padding: .4rem 1.5rem;

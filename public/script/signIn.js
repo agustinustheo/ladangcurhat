@@ -11,10 +11,13 @@ $('#btnSignIn').click(function(e) {
     contentType: 'application/json',
     url: 'http://localhost:' + port + '/signin',						
     success: function(data) {
-        console.log('success');
+        // console.log('success');
         localStorage.setItem('authData', JSON.stringify(data));
-        var objectInStorage = JSON.parse(localStorage.getItem('authData'));
-        console.log(objectInStorage);
+        // var objectInStorage = JSON.parse(localStorage.getItem('authData'));
+        // console.log(objectInStorage);
+        $('.login-canvas').hide();
+        $('#nextPage').show();
+        runChat();
     }
   });
 });

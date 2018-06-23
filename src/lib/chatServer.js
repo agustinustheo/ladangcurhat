@@ -22,7 +22,7 @@ exports.listen = function(server) {
       console.log(authData)
       // if user is authenticated
       if(authData.authenticated) {
-        assignUsername(socket, authData.username);
+        assignUsername(socket, authData.username, nickNames);
       } else {
         // Assign it a guest name
         guestNumber = assignGuestNumber(socket, guestNumber, nickNames, namesUsed);

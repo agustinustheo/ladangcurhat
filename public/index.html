@@ -27,7 +27,7 @@
                             <label class="form-check-label" for="alwaysSignedIn">Keep me signed in</label>
                         </div>
                         <button id="btnSignIn" class="btn btn-success btn-signin">Sign In</button>
-                        <button class="btn btn-success btn-guest">Continue as Guest</button>
+                        <a href="#" class="btn-link btn-guest">Continue as Guest</a>
                         <a href="/signup" class="btn-link">Don't have an account? Sign up here</a>
                     </div>
                 </form>
@@ -52,9 +52,7 @@
         <div class="canvas" id="dashboard" style="overflow-x: hidden; overflow-y: scroll;">
           <div class="ladangcurhat-navbar">
               <span style="position: absolute; right: 5vw;">
-                  <span class="link">Home</span>
-                  <span class="link">About</span>
-                  <span class="link">Settings</span>
+                  <span id="btnSignOut" class="link">Sign Out</span>
               </span>
           </div>
           <div class="dashboard">
