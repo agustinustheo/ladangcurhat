@@ -10,7 +10,7 @@
   "author": "Agustinus Theodorus",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "2.0.1",
+    "bcrypt": "5.0.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
     "datatables.net": "1.10.16",
